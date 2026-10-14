@@ -1,0 +1,37 @@
+import {
+  BadgeCheck,
+  Building2,
+  ClipboardCheck,
+  Clock,
+  Ear,
+  Eye,
+  Hand,
+  Handshake,
+  Home,
+  PlusCircle,
+  Settings,
+  ShieldCheck,
+  Sparkles,
+  Tractor,
+  UsersRound,
+  type LucideIcon,
+} from "lucide-react";
+
+/** Mapa de nomes usados nos arquivos de conteúdo → ícones lucide-react. */
+export const iconMap: Record<string, LucideIcon> = {
+  users: UsersRound,
+  settings: Settings,
+  shield: ShieldCheck,
+  ear: Ear,
+  clipboard: ClipboardCheck,
+  badge: BadgeCheck,
+  handshake: Handshake,
+  hand: Hand,
+  clock: Clock,
+  building: Building2,
+  tractor: Tractor,
+  home: Home,
+  plus: PlusCircle,
+  eye: Eye,
+  sparkles: Sparkles,
+};

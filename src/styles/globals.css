@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens MAPASA — Brandbook 2026.
+ * Fonte única das cores, fontes, raios e larguras usados em todo o site.
+ * Os mesmos valores estão espelhados em src/config/design-tokens.ts para uso em TypeScript.
+ */
+@theme {
+  /* Paleta oficial */
+  --color-forest: #1f4d36;
+  --color-forest-deep: #163a28; /* tom de apoio para sombras/hover derivado do Verde Floresta */
+  --color-heartwood: #6b4a2f;
+  --color-gold: #d4b46a;
+  --color-gold-hover: #c9a75a;
+  --color-eucalyptus: #7a9a86;
+  --color-sand: #f3f1ea;
+  --color-sand-deep: #ece7dc;
+  --color-border: #dfded4;
+  --color-ink: #1f4d36;
+  --color-muted: #33403a;
+
+  /* Tipografia */
+  --font-heading: var(--font-jost), "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  /* Raios */
+  --radius-card: 8px;
+  --radius-input: 6px;
+
+  /* Breakpoints padrão do Tailwind já correspondem ao JSON: md = 768px (tablet), lg = 1024px (desktop). */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-sand);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      font-size: 15px;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    line-height: 1.12;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Âncoras não ficam escondidas atrás do cabeçalho fixo */
+  [id] {
+    scroll-margin-top: 96px;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-forest);
+  }
+}
+
+@layer components {
+  .container-site {
+    width: 100%;
+    max-width: 1408px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  @media (min-width: 768px) {
+    .container-site {
+      padding-inline: 28px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-site {
+      padding-inline: 48px;
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .text-hero {
+    font-size: clamp(38px, 10vw, 54px);
+  }
+  .text-h2 {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+  .text-h3 {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+  @media (min-width: 768px) {
+    .text-hero {
+      font-size: clamp(44px, 6vw, 60px);
+    }
+    .text-h2 {
+      font-size: clamp(30px, 4.4vw, 40px);
+    }
+  }
+  @media (min-width: 1024px) {
+    .text-hero {
+      font-size: clamp(48px, 4.6vw, 68px);
+    }
+    .text-h2 {
+      font-size: clamp(32px, 3vw, 44px);
+    }
+    .text-h3 {
+      font-size: clamp(24px, 2.2vw, 30px);
+    }
+  }
+
+  .lead {
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+  @media (min-width: 1024px) {
+    .lead {
+      font-size: 17px;
+      line-height: 1.62;
+    }
+  }
+
+  .section-y {
+    padding-block: 48px;
+  }
+  @media (min-width: 1024px) {
+    .section-y {
+      padding-block: 72px;
+    }
+  }
+
+  .field-input {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    background: #fff;
+    border-radius: var(--radius-input);
+    padding: 12px 14px;
+    font-size: 15px;
+    color: var(--color-forest);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .field-input::placeholder {
+    color: #8a918b;
+  }
+  .field-input:focus {
+    outline: none;
+    border-color: var(--color-forest);
+    box-shadow: 0 0 0 3px rgba(212, 180, 106, 0.35);
+  }
+  .field-select {
+    appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%231F4D36' stroke-width='1.6' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px 8px;
+  }
+  .field-input[aria-invalid="true"] {
+    border-color: #a3381f;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
