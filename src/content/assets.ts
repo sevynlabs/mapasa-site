@@ -33,10 +33,17 @@ export const assets = {
   },
   eucalyptusLogs: {
     src: "/assets/images/eucalipto/toras-patio.jpg",
-    alt: "Toras de eucalipto empilhadas",
-    status: "illustrative",
-    brief: "Toras de eucalipto no pátio da MAPASA, horizontal.",
-    focus: "45% 55%",
+    alt: "Pátio da MAPASA com postes de eucalipto tratado empilhados sob o sol",
+    status: "real",
+    brief: "Pátio da MAPASA com postes de eucalipto.",
+    focus: "50% 55%",
+  },
+  eucalyptusDetail: {
+    src: "/assets/images/eucalipto/toras-detalhe.jpg",
+    alt: "Toras de eucalipto empilhadas no pátio da MAPASA, vistas de perto",
+    status: "real",
+    brief: "Detalhe das toras de eucalipto no pátio da MAPASA.",
+    focus: "45% 50%",
   },
   plannedKitchen: {
     src: "/assets/images/planejados/cozinha-projeto.jpg",
@@ -89,9 +96,10 @@ export const assets = {
   },
   companyExterior: {
     src: "/assets/images/empresa/fachada.jpg",
-    alt: "Fachada da MAPASA",
-    status: "pending",
-    brief: "Fotografia real da fachada ou da operação da MAPASA",
+    alt: "Galpões e pátio da MAPASA com toras de eucalipto em primeiro plano",
+    status: "real",
+    brief: "Fotografia real da operação da MAPASA",
+    focus: "55% 45%",
   },
   companyTeam: {
     src: "/assets/images/empresa/equipe.jpg",

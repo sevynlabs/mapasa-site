@@ -13,6 +13,8 @@ type Props = {
   badge?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | false;
   pendingTone?: "light" | "dark";
   pendingCompact?: boolean;
+  /** Enquadramento específico deste uso (CSS object-position). Sem ele, vale o `focus` do manifesto. */
+  focus?: string;
 };
 
 /**
@@ -29,6 +31,7 @@ export function SiteImage({
   badge = "bottom-left",
   pendingTone = "light",
   pendingCompact,
+  focus,
 }: Props) {
   const a = assets[asset];
   if (a.status === "pending") {
@@ -47,7 +50,7 @@ export function SiteImage({
         sizes={sizes}
         priority={priority}
         className={cn("object-cover", imgClassName)}
-        style={{ objectPosition: "focus" in a ? a.focus : "50% 50%" }}
+        style={{ objectPosition: focus ?? ("focus" in a ? a.focus : "50% 50%") }}
       />
       {a.status === "illustrative" && SHOW_PLACEHOLDER_BADGES && badge && <IllustrativeBadge position={badge} />}
     </div>

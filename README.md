@@ -140,13 +140,14 @@ mover o ponto de enquadramento.
 | Arquivo | Onde aparece | Status atual |
 | --- | --- | --- |
 | `images/home/cozinha-hero.jpg` | Hero da home | ilustrativa |
-| `images/eucalipto/toras-patio.jpg` | Cards, seção eucalipto, página /eucalipto | ilustrativa |
+| `images/eucalipto/toras-patio.jpg` | Card de eucalipto e faixa de contato (home), hero de /eucalipto, “Origem” em /sobre | **real** (pátio da MAPASA, tratada) |
+| `images/eucalipto/toras-detalhe.jpg` | Faixa “Seu projeto começa…” (home), “Escolha presencial” em /eucalipto | **real** (detalhe das toras, tratada) |
 | `images/planejados/cozinha-projeto.jpg` | Card planejados, seção planejados, hero /moveis-planejados | ilustrativa |
 | `images/planejados/ambiente-1..3.jpg` | Miniaturas da seção planejados | ilustrativa |
 | `images/projetos/{cozinha,quarto,sala,banheiro}.jpg` | Cards de demonstração e grade de ambientes | ilustrativa |
-| `images/empresa/fachada.jpg` | Nossa história (home e /sobre) | **pendente** |
+| `images/empresa/fachada.jpg` | Nossa história (home) e hero de /sobre | **real** (galpões e pátio, tratada) |
 | `images/empresa/equipe.jpg` | /sobre | **pendente** |
-| `images/empresa/atendimento.jpg` | Faixa de contato da home | **pendente** |
+| `images/empresa/atendimento.jpg` | Faixa de contato da home (enquanto pendente, a faixa usa a foto do pátio) | **pendente** |
 
 Recomendações: JPG horizontal com no mínimo **2000 px** de largura para o hero e **1400 px** para as demais.
 Retratos de funcionários e fachadas devem ser **reais e autorizados**.
@@ -255,7 +256,8 @@ Por padrão o site envia `noindex` e o `robots.txt` bloqueia buscadores, para qu
 - [ ] Logotipo versão **negativa** oficial (hoje é uma derivação provisória)
 - [x] WhatsApp, Instagram e endereço
 - [ ] Telefone fixo (se houver), e-mail, horário de atendimento, razão social e CNPJ, domínio
-- [ ] Fotografias reais: fachada/operação, equipe, retrato do atendimento, eucalipto no pátio, cozinha para o hero
+- [x] Fotografias reais do pátio e da operação (eucalipto)
+- [ ] Fotografias reais: equipe, retrato do atendimento, cozinha planejada para o hero e ambientes
 - [ ] Projetos executados com fotos autorizadas pelos clientes
 - [ ] Confirmação das categorias de ambientes atendidas (inclusive “Ambientes comerciais”)
 - [ ] Catálogo de eucalipto (nomes, medidas e aplicações confirmadas)

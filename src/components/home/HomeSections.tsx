@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Camera } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { homeContent } from "@/content/home";
 import { assets } from "@/content/assets";
 import { ButtonLink } from "@/components/ui/Button";
@@ -99,7 +99,7 @@ export function EucalyptusFeature() {
   return (
     <section aria-labelledby="eucalipto-home" className="relative overflow-hidden bg-forest lg:min-h-[376px]">
       <div className="relative h-[280px] md:h-[360px] lg:absolute lg:inset-y-0 lg:left-0 lg:h-auto lg:w-[56%]">
-        <SiteImage asset="eucalyptusLogs" sizes="(min-width: 1024px) 56vw, 100vw" badge="top-left" />
+        <SiteImage asset="eucalyptusDetail" sizes="(min-width: 1024px) 56vw, 100vw" badge="top-left" focus="40% 60%" />
         <div
           aria-hidden
           className="absolute inset-0 hidden lg:block"
@@ -149,7 +149,7 @@ export function CompanyStory() {
           </ButtonLink>
         </div>
         <div className="relative aspect-[16/9] overflow-hidden rounded-[8px] lg:aspect-auto lg:h-[356px]">
-          <SiteImage asset="companyExterior" sizes="(min-width: 1024px) 45vw, 100vw" />
+          <SiteImage asset="companyExterior" sizes="(min-width: 1024px) 45vw, 100vw" focus="55% 42%" />
         </div>
       </div>
     </section>
@@ -209,8 +209,9 @@ export function FinalCta() {
   return (
     <section aria-labelledby="contato-home" className="relative overflow-hidden bg-sand">
       <div className="absolute inset-y-0 right-0 hidden w-[52%] lg:block">
+        {/* Sem retrato autorizado da equipe, a faixa usa a foto real do pátio. Com o retrato (contactTeamMember: "real"), ele assume. */}
         {portraitPending ? (
-          <SiteImage asset="eucalyptusLogs" sizes="52vw" badge="bottom-right" />
+          <SiteImage asset="eucalyptusLogs" sizes="52vw" badge="bottom-right" focus="65% 62%" />
         ) : (
           <SiteImage asset="contactTeamMember" sizes="52vw" />
         )}
@@ -222,13 +223,6 @@ export function FinalCta() {
               "linear-gradient(90deg, #F3F1EA 0%, rgba(243,241,234,0.85) 18%, rgba(243,241,234,0.25) 42%, rgba(243,241,234,0) 60%)",
           }}
         />
-        {portraitPending && (
-          <div className="absolute bottom-6 right-[11%] top-6 flex w-[230px] flex-col items-center justify-center gap-2 rounded-[8px] border border-dashed border-white/80 bg-forest/80 px-5 text-center text-white">
-            <Camera aria-hidden className="size-6 text-gold" />
-            <p className="eyebrow text-[10px] text-gold">Fotografia pendente</p>
-            <p className="text-[13px] leading-snug">Retrato real e autorizado de um integrante da equipe</p>
-          </div>
-        )}
       </div>
       <div className="container-site relative z-10 py-12 lg:flex lg:min-h-[320px] lg:items-center lg:py-[26px]">
         <div className="max-w-[720px] lg:pl-[24px]">

@@ -25,7 +25,7 @@ export default function SobrePage() {
             <p className="lead mt-4 max-w-[520px] text-muted">{c.story.description}</p>
           </div>
           <div className="relative aspect-[16/10] overflow-hidden rounded-[8px]">
-            <SiteImage asset="companyExterior" sizes="(min-width: 1024px) 45vw, 100vw" />
+            <SiteImage asset="eucalyptusLogs" sizes="(min-width: 1024px) 45vw, 100vw" />
           </div>
         </div>
       </section>

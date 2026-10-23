@@ -96,7 +96,7 @@ export default function EucaliptoPage() {
       <section aria-labelledby="escolha" className="bg-sand">
         <div className="grid lg:grid-cols-2">
           <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[460px]">
-            <SiteImage asset="eucalyptusLogs" sizes="(min-width: 1024px) 50vw, 100vw" />
+            <SiteImage asset="eucalyptusDetail" sizes="(min-width: 1024px) 50vw, 100vw" />
           </div>
           <div className="flex items-center px-5 py-12 md:px-7 lg:px-20 lg:py-16">
             <div className="max-w-[520px]">
