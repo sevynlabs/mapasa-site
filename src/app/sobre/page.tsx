@@ -6,10 +6,35 @@ import { Eyebrow } from "@/components/ui/SectionHeading";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { iconMap } from "@/components/icons/iconMap";
 import { CallToAction } from "@/components/sections/CallToAction";
+import { assets } from "@/content/assets";
 
 export const metadata: Metadata = pageMetadata({ ...c.meta, path: "/sobre" });
 
+function EvolutionPath() {
+  return (
+    <div className="mt-8 flex items-center gap-4 text-[12px] font-bold uppercase tracking-[0.18em] text-heartwood">
+      <span>Eucalipto</span>
+      <span aria-hidden className="h-px w-12 bg-gold" />
+      <span>Móveis planejados</span>
+    </div>
+  );
+}
+
+function EvolutionText() {
+  return (
+    <>
+      <Eyebrow className="mb-3">{c.evolution.eyebrow}</Eyebrow>
+      <h2 id="evolucao" className="text-h2 text-forest">
+        {c.evolution.title}
+      </h2>
+      <p className="lead mt-4 max-w-[520px] text-muted">{c.evolution.description}</p>
+      <EvolutionPath />
+    </>
+  );
+}
+
 export default function SobrePage() {
+  const hasTeamPhoto = assets.companyTeam.status !== "pending";
   return (
     <>
       <InternalHero eyebrow={c.hero.eyebrow} title={c.hero.title} image="companyExterior" />
@@ -30,25 +55,31 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Evolução */}
+      {/* Evolução — a foto da equipe só aparece quando companyTeam tiver status "real" em src/content/assets.ts */}
       <section aria-labelledby="evolucao" className="section-y border-t border-border bg-sand">
-        <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="relative order-2 aspect-[16/10] overflow-hidden rounded-[8px] lg:order-1">
-            <SiteImage asset="companyTeam" sizes="(min-width: 1024px) 45vw, 100vw" />
-          </div>
-          <div className="order-1 lg:order-2">
-            <Eyebrow className="mb-3">{c.evolution.eyebrow}</Eyebrow>
-            <h2 id="evolucao" className="text-h2 text-forest">
-              {c.evolution.title}
-            </h2>
-            <p className="lead mt-4 max-w-[520px] text-muted">{c.evolution.description}</p>
-            <div className="mt-8 flex items-center gap-4 text-[12px] font-bold uppercase tracking-[0.18em] text-heartwood">
-              <span>Eucalipto</span>
-              <span aria-hidden className="h-px w-12 bg-gold" />
-              <span>Móveis planejados</span>
+        {hasTeamPhoto ? (
+          <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="relative order-2 aspect-[16/10] overflow-hidden rounded-[8px] lg:order-1">
+              <SiteImage asset="companyTeam" sizes="(min-width: 1024px) 45vw, 100vw" />
+            </div>
+            <div className="order-1 lg:order-2">
+              <EvolutionText />
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="container-site grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-16">
+            <div className="lg:pl-[6px]">
+              <Eyebrow className="mb-3">{c.evolution.eyebrow}</Eyebrow>
+              <h2 id="evolucao" className="text-h2 max-w-[560px] text-forest">
+                {c.evolution.title}
+              </h2>
+            </div>
+            <div className="lg:pt-8">
+              <p className="lead max-w-[560px] text-muted">{c.evolution.description}</p>
+              <EvolutionPath />
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Valores */}
