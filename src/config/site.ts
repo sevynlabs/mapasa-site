@@ -63,7 +63,7 @@ export const brandCopy = {
 };
 
 /** Exibe o selo "Imagem ilustrativa" sobre fotos provisórias. Mantenha `true` até todas as fotos serem reais. */
-export const SHOW_PLACEHOLDER_BADGES = true;
+export const SHOW_PLACEHOLDER_BADGES = false;
 
 /**
  * URL pública do site. Ordem: `domain` acima → NEXT_PUBLIC_SITE_URL → domínio de produção da Vercel.
